@@ -1,0 +1,493 @@
+/* FINAL PREMIUM DESIGN ❤️ */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+
+    width:100%;
+    height:100vh;
+
+    overflow:hidden;
+
+    position:relative;
+
+    background:
+    radial-gradient(circle at top,#35105f,#080012);
+
+    font-family:'Poppins',sans-serif;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+
+/* LOADING SCREEN */
+
+#loader{
+
+    position:fixed;
+
+    width:100%;
+    height:100%;
+
+    background:#050008;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    z-index:100;
+
+}
+
+
+
+.heart-loader{
+
+    font-size:80px;
+
+    animation:pulse 1s infinite;
+
+}
+
+
+
+#loader h2{
+
+    margin-top:20px;
+
+    font-weight:400;
+
+}
+
+
+
+.progress{
+
+    width:250px;
+
+    height:12px;
+
+    background:#333;
+
+    border-radius:20px;
+
+    margin-top:25px;
+
+    overflow:hidden;
+
+}
+
+
+
+.bar{
+
+    height:100%;
+
+    width:0%;
+
+    background:linear-gradient(
+    90deg,
+    #ff4f92,
+    #ffb6d9
+    );
+
+    animation:load 3s forwards;
+
+}
+
+
+
+@keyframes load{
+
+    to{
+
+        width:100%;
+
+    }
+
+}
+
+
+
+@keyframes pulse{
+
+    50%{
+
+        transform:scale(1.3);
+
+    }
+
+}
+
+
+
+
+/* CANVAS */
+
+#fireworks{
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+}
+
+
+
+/* MUSIC BUTTON */
+
+#musicBtn{
+
+    position:absolute;
+
+    top:30px;
+
+    right:30px;
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    border:none;
+
+    background:#ff4f92;
+
+    color:white;
+
+    font-size:25px;
+
+    cursor:pointer;
+
+    box-shadow:
+
+    0 0 30px #ff4f92;
+
+    z-index:10;
+
+}
+
+
+
+/* MAIN CONTENT */
+
+.main{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    text-align:center;
+
+    z-index:5;
+
+    opacity:0;
+
+    animation:show 2s forwards;
+
+    animation-delay:3s;
+
+}
+
+
+
+.heart-big{
+
+    font-size:100px;
+
+    animation:
+
+    heartBeat 1.5s infinite;
+
+}
+
+
+
+@keyframes heartBeat{
+
+
+50%{
+
+    transform:scale(1.2);
+
+}
+
+
+}
+
+
+
+
+h1{
+
+
+font-size:70px;
+
+
+margin:20px 0;
+
+
+background:
+
+linear-gradient(
+45deg,
+#ff4f92,
+white,
+#ffb6d9
+);
+
+
+
+background-clip:text;
+
+-webkit-background-clip:text;
+
+color:transparent;
+
+-webkit-text-fill-color:transparent;
+
+
+}
+
+
+
+.main h2{
+
+    font-size:30px;
+
+    margin-bottom:30px;
+
+}
+
+
+
+.letter{
+
+width:500px;
+
+max-width:90%;
+
+padding:35px;
+
+text-align:center;
+
+margin:auto;
+
+background:
+
+rgba(255,255,255,0.12);
+
+
+backdrop-filter:blur(15px);
+
+
+border-radius:30px;
+
+
+box-shadow:
+
+0 0 50px rgba(255,79,146,.4);
+
+
+line-height:2;
+
+
+font-size:18px;
+
+
+}
+
+
+
+.main button{
+
+
+margin-top:35px;
+
+
+padding:18px 45px;
+
+
+border:none;
+
+
+border-radius:50px;
+
+
+background:#ff4f92;
+
+
+color:white;
+
+
+font-size:20px;
+
+
+cursor:pointer;
+
+
+box-shadow:
+
+0 0 30px #ff4f92;
+
+
+transition:.3s;
+
+
+}
+
+
+
+.main button:hover{
+
+
+transform:scale(1.1);
+
+
+}
+
+
+
+@keyframes show{
+
+
+from{
+
+opacity:0;
+
+transform:translateY(50px);
+
+}
+
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+
+}
+
+
+
+/* FLOATING HEARTS */
+
+
+.floating-heart{
+
+
+position:absolute;
+
+
+font-size:25px;
+
+
+animation:float 6s linear infinite;
+
+
+}
+
+
+
+@keyframes float{
+
+
+from{
+
+transform:
+translateY(100vh)
+rotate(0deg);
+
+
+opacity:1;
+
+
+}
+
+
+to{
+
+
+transform:
+translateY(-100vh)
+rotate(360deg);
+
+
+opacity:0;
+
+
+}
+
+
+}
+
+
+
+/* MOBILE RESPONSIVE */
+
+
+@media(max-width:600px){
+
+
+h1{
+
+font-size:42px;
+
+}
+
+
+.main h2{
+
+font-size:22px;
+
+}
+
+
+.letter{
+
+
+width:90%;
+
+
+font-size:15px;
+
+
+}
+
+
+.heart-big{
+
+font-size:70px;
+
+}
+
+
+}

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Our Journey ❤️</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+overflow:hidden;
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:black;
+
+font-family:Poppins,sans-serif;
+
+}
+
+canvas{
+
+position:absolute;
+
+width:100%;
+
+height:100%;
+
+}
+
+.container{
+
+position:relative;
+
+z-index:2;
+
+text-align:center;
+
+color:white;
+
+padding:40px;
+
+}
+
+h1{
+
+font-family:Great Vibes;
+
+font-size:70px;
+
+margin-bottom:30px;
+
+color:#ffd5ef;
+
+opacity:0;
+
+animation:fade 2s forwards;
+
+}
+
+p{
+
+font-size:25px;
+
+line-height:45px;
+
+opacity:0;
+
+animation:fade 2s forwards;
+
+animation-delay:2s;
+
+}
+
+button{
+
+margin-top:50px;
+
+padding:18px 50px;
+
+font-size:20px;
+
+border:none;
+
+border-radius:50px;
+
+background:#ff4d8d;
+
+color:white;
+
+cursor:pointer;
+
+opacity:0;
+
+animation:fade 2s forwards;
+
+animation-delay:4s;
+
+transition:.4s;
+
+}
+
+button:hover{
+
+transform:scale(1.08);
+
+box-shadow:0 0 30px hotpink;
+
+}
+
+@keyframes fade{
+
+to{
+
+opacity:1;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<canvas id="stars"></canvas>
+
+<div class="container">
+
+<h1>
+
+Welcome ❤️
+
+</h1>
+
+<p id="typing"></p>
+
+<button id="continue">
+
+Continue ❤️
+
+</button>
+
+</div>
+
+<script>
+
+const message=
+
+"Before this journey begins... I just want you to know that every single click you make will reveal a little piece of my heart. ❤️";
+
+let i=0;
+
+function typing(){
+
+if(i<message.length){
+
+document.getElementById("typing").innerHTML+=message.charAt(i);
+
+i++;
+
+setTimeout(typing,35);
+
+}
+
+}
+
+typing();
+
+const canvas=document.getElementById("stars");
+
+const c=canvas.getContext("2d");
+
+canvas.width=window.innerWidth;
+
+canvas.height=window.innerHeight;
+
+let stars=[];
+
+for(let i=0;i<250;i++){
+
+stars.push({
+
+x:Math.random()*canvas.width,
+
+y:Math.random()*canvas.height,
+
+r:Math.random()*2,
+
+s:Math.random()*1
+
+});
+
+}
+
+function animate(){
+
+c.clearRect(0,0,canvas.width,canvas.height);
+
+c.fillStyle="white";
+
+stars.forEach(star=>{
+
+c.beginPath();
+
+c.arc(star.x,star.y,star.r,0,Math.PI*2);
+
+c.fill();
+
+star.y+=star.s;
+
+if(star.y>canvas.height){
+
+star.y=0;
+
+}
+
+});
+
+requestAnimationFrame(animate);
+
+}
+
+animate();
+
+document.getElementById("continue").onclick=()=>{
+
+window.location.href="name.html";
+
+}
+
+</script>
+
+</body>
+
+</html>

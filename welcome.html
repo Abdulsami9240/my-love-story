@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Welcome ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    background:
+    radial-gradient(circle at top,#5b1b8c,#080012);
+
+    font-family:'Poppins',sans-serif;
+
+    color:white;
+
+}
+
+
+/* Background Hearts */
+
+.heart{
+
+    position:absolute;
+
+    color:#ff7eb9;
+
+    font-size:25px;
+
+    animation:float 8s linear infinite;
+
+    opacity:.7;
+
+}
+
+
+@keyframes float{
+
+0%{
+
+transform:translateY(100vh) scale(0);
+
+opacity:0;
+
+}
+
+
+50%{
+
+opacity:1;
+
+}
+
+
+100%{
+
+transform:translateY(-10vh) scale(1.5);
+
+opacity:0;
+
+}
+
+}
+
+
+/* Main Card */
+
+.welcome-box{
+
+    width:450px;
+
+    max-width:90%;
+
+    padding:50px 30px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(12px);
+
+    border-radius:25px;
+
+    box-shadow:
+    0 0 30px rgba(255,105,180,.4);
+
+    animation:show 2s ease;
+
+}
+
+
+@keyframes show{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px) scale(.8);
+
+}
+
+
+to{
+
+opacity:1;
+
+transform:translateY(0) scale(1);
+
+}
+
+}
+
+
+
+h1{
+
+font-size:65px;
+
+font-family:'Great Vibes';
+
+color:#ffb6d9;
+
+text-shadow:
+0 0 15px pink;
+
+margin-bottom:20px;
+
+}
+
+
+
+p{
+
+font-size:18px;
+
+color:#ffd6eb;
+
+letter-spacing:1px;
+
+}
+
+
+
+.heart-big{
+
+font-size:60px;
+
+animation:pulse 1.5s infinite;
+
+}
+
+
+@keyframes pulse{
+
+50%{
+
+transform:scale(1.2);
+
+}
+
+}
+
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="welcome-box">
+
+<div class="heart-big">
+❤️
+</div>
+
+
+<h1 id="welcome"></h1>
+
+
+<p>
+A special surprise is waiting for you 🌹
+</p>
+
+
+</div>
+
+
+
+<script>
+
+
+const name = localStorage.getItem("girlName");
+
+
+document.getElementById("welcome").innerHTML =
+
+"Welcome "+name;
+
+
+
+// Floating hearts
+
+for(let i=0;i<25;i++){
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"%";
+
+heart.style.animationDelay=Math.random()*5+"s";
+
+heart.style.fontSize=(15+Math.random()*25)+"px";
+
+document.body.appendChild(heart);
+
+}
+
+
+
+// Go to game page
+
+setTimeout(()=>{
+
+window.location.href="game1.html";
+
+},5000);
+
+
+
+</script>
+
+
+</body>
+
+</html>

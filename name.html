@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Your Name ❤️</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap"
+rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+
+background:linear-gradient(135deg,#120018,#28013d,#53004e,#7b005c);
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+overflow:hidden;
+
+}
+
+.card{
+
+width:90%;
+
+max-width:700px;
+
+padding:50px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+border-radius:30px;
+
+text-align:center;
+
+box-shadow:0 0 40px rgba(255,255,255,.15);
+
+color:white;
+
+animation:show 1.2s;
+
+}
+
+@keyframes show{
+
+from{
+
+opacity:0;
+
+transform:translateY(60px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+h1{
+
+font-family:Great Vibes;
+
+font-size:70px;
+
+margin-bottom:20px;
+
+color:#ffd7f0;
+
+}
+
+p{
+
+font-size:20px;
+
+margin-bottom:30px;
+
+}
+
+input{
+
+width:100%;
+
+padding:18px;
+
+border:none;
+
+outline:none;
+
+border-radius:50px;
+
+font-size:18px;
+
+text-align:center;
+
+margin-bottom:30px;
+
+}
+
+button{
+
+padding:18px 45px;
+
+border:none;
+
+border-radius:50px;
+
+background:#ff4f93;
+
+font-size:20px;
+
+color:white;
+
+cursor:pointer;
+
+transition:.4s;
+
+}
+
+button:hover{
+
+transform:scale(1.08);
+
+box-shadow:0 0 30px hotpink;
+
+}
+
+.error{
+
+margin-top:20px;
+
+color:#ffb3d9;
+
+font-size:16px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>Hello Beautiful ❤️</h1>
+
+<p>
+
+Before we continue...
+
+Tell me your beautiful name...
+
+</p>
+
+<input
+type="text"
+id="girlName"
+placeholder="Type your name here">
+
+<br>
+
+<button onclick="saveName()">
+
+Continue ❤️
+
+</button>
+
+<p
+class="error"
+id="error">
+
+</p>
+
+</div>
+
+<script>
+
+function saveName(){
+
+const name=document.getElementById("girlName").value.trim();
+
+if(name==""){
+
+document.getElementById("error").innerHTML="Please tell me your beautiful name ❤️";
+
+return;
+
+}
+
+localStorage.setItem("girlName",name);
+
+window.location.href="welcome.html";
+
+}
+
+</script>
+
+</body>
+
+</html>
